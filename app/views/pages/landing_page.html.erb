@@ -1,4 +1,139 @@
-<div>
-  <h1 class="font-bold text-4xl">Pages#landing_page</h1>
-  <p>Find me in app/views/pages/landing_page.html.erb</p>
-</div>
+<main>
+  <section class="h-96 flex justify-around items-center gap-10 bg-mainColor">
+    <div class="text-white text-center">
+      <p class="font-semibold text-3xl py-5">
+        Survey Rails App
+      </p>
+      <p>
+        Create your first survey
+      </p>
+      <p>
+        Start sending surveys to different companies around the world.
+      </p>
+      <div class="py-5 text-black">
+        <%= button_to root_path, id: "get_started" do %>
+          <div class="bg-signIn p-4 rounded-lg">
+            <i class="fa-solid fa-circle-arrow-right"></i> 
+            <span class="ml-5">
+              get started
+            </span>
+          </div>
+        <% end %>
+      </div>
+      <p class="text-sm font-semibold">
+        survey-rails-app.com
+      </p>
+    </div>
+    <div>
+      <%= image_tag("ruby.png", width: "300") %>
+    </div>
+  </section>
+
+  <section>
+    <div class="flex justify-around p-10">
+      <%= image_tag("Amazon.png", width:"150")%>
+      <%= image_tag("Facebook.png", width:"150")%>
+      <%= image_tag("Google.png", width:"150")%>
+      <%= image_tag("Instagram.png", width:"150")%>
+      <%= image_tag("LinkedIn.png", width:"150")%>
+      <%= image_tag("Spotify.png", width:"150")%>
+      <%= image_tag("Twitter.png", width:"150")%>
+    </div>
+
+    <p class="text-center text-sm font-semibold text-mainColor p-10">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt accusamus eos placeat commodi deleniti delectus error minima reiciendis quasi corrupti amet assumenda molestias porro iure, debitis alias velit ipsam id.
+    </p>
+  </section>
+
+  <div class="text-center text-sm font-semibold border-2">
+    ---
+  </div>
+
+  <section class="h-96 flex justify-around items-center">
+    <div>
+      <%= image_tag("2126918.jpg", width:"350") %>
+    </div>
+    <div>
+      <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">Working with  your team!</h2>
+      <p class="text-sm text-center text-mainColor font-semibold">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.  <br>
+        Dolorum accusantium voluptatem nesciunt commodi. Voluptatum  <br>
+        ipsa laborum iusto! Cum ex dolore assumenda aperiam sunt, <br>
+        ducimus nostrum? Sed debitis eius reiciendis in?
+      </p>
+    </div>
+  </section>
+
+  <div class="text-center text-sm font-semibold border-2">
+    ---
+  </div>
+
+  <section class="h-96 flex justify-around items-center">
+    
+    <div>
+      <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">Answer the survey</h2>
+      <p class="text-sm text-center text-mainColor font-semibold">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.  <br>
+        Dolorum accusantium voluptatem nesciunt commodi. Voluptatum  <br>
+        ipsa laborum iusto! Cum ex dolore assumenda aperiam sunt, <br>
+        ducimus nostrum? Sed debitis eius reiciendis in?
+      </p>
+    </div>
+
+    <div>
+      <%= image_tag("4048544.jpg", width:"350") %>
+    </div>
+
+  </section>
+
+  <div class="text-center text-sm font-semibold border-2">
+    ---
+  </div>
+
+  <section class="h-96 flex flex-col justify-around items-center m-32">
+    
+    <div>
+      <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">Answer the survey</h2>
+    </div>
+
+    <div class="flex py-10 w-3/6 justify-between">
+      <%= image_tag("2978479.jpg", width:"250") %>
+      <%= image_tag("check_box_image.png", width:"250") %>
+    </div>
+
+    <div>
+      <p class="text-sm text-center text-mainColor font-semibold">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.  
+        Dolorum accusantium voluptatem nesciunt commodi. Voluptatum  
+        ipsa laborum iusto! Cum ex dolore assumenda aperiam sunt, 
+        ducimus nostrum? Sed debitis eius reiciendis in?
+      </p>
+    </div>
+  </section>
+
+  <div class="text-center text-sm font-semibold border-2">
+    ---
+  </div>
+
+  <section class="flex flex-col justify center m-32 h-96 items-center">
+    
+    <div>
+      <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">¡It makes it easier!</h2>
+    </div>
+
+    <div class="flex py-10" >
+      <%= image_tag("posting_image.png") %>
+    </div>
+
+    <div>
+      <p class="text-sm text-center text-mainColor font-semibold">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.  
+        Dolorum accusantium voluptatem nesciunt commodi. Voluptatum   
+        ipsa laborum iusto! Cum ex dolore assumenda aperiam sunt, 
+        ducimus nostrum? Sed debitis eius reiciendis in?
+      </p>
+    </div>
+  </section>
+
+
+</main>
