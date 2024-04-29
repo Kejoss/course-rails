@@ -13,9 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+@import url("/actiontext.css");
+
  #question_question_type{
     border-radius: 10px;
     padding: 10px;
     font-size: 12px;
     font-weight: 600;
+}
+
+.trix-content img{
+    height: 300px;
+    width: 400px;
+    object-fit: contain;
 }
