@@ -3,7 +3,10 @@ class Section < ApplicationRecord
   scope :grab_all_chapters, -> { where("section_type = 2") }
 
   belongs_to :user
-  has_many :questions
+  has_many :questions, dependent: :destroy
+
+  has_many :survey_sections
+  has_many :surveys, through: :survey_sections
 
   has_rich_text :body
 

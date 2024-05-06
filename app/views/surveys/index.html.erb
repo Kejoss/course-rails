@@ -1,0 +1,5 @@
+<% if @surveys.any? %>
+    <%= render "surveys", surveys: @surveys %>
+<% else %>
+    <%= render 'welcome'%> 
+<% end %>
