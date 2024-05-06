@@ -1,12 +1,25 @@
 import { Controller } from "@hotwired/stimulus"
 
+const restoreform = (id) =>{
+  document.getElementById(`${id}`).reset();
+}
+
 export default class extends Controller {
   resetform() {
     document.getElementById('modal').remove();
   }
-  questionForm(){
+  questionForm(e){
+    const formId = e.target.id;
     const timer = setInterval(() => {
-      document.getElementById('new_question').reset();
+      restoreform(formId);
+      clearInterval(timer);
+    },100)
+  }
+
+  optionForm(e){
+    const formId = e.target.id;
+    const timer = setInterval(() => {
+      restoreform(formId);
       clearInterval(timer);
     },100)
   }
