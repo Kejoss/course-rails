@@ -6,7 +6,7 @@
 
 @layer components {
   .check-user-box {
-    @apply bg-footerGray text-chapterStrong shadow-lg;
+    @apply bg-footerGray text-black shadow-lg;
   }
 }
 

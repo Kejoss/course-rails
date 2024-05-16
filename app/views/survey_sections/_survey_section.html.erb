@@ -17,7 +17,7 @@
         <span class="font-semibold"> <%= time_ago_in_words(section.created_at) %></span>
    </div>
    <div class="w-1/12 flex justify-end mr-5">
-          <%= button_to '#', id:"remove_section_icon", method: :delete, form: {data: {turbo_confirm: "Are you sure?"} } do %>
+          <%= button_to survey_delete_section_path(survey, id: section.id), id:"remove_section_icon", method: :delete, form: {data: {turbo_confirm: "Are you sure?"} } do %>
                <i class="fa-solid fa-trash text-removeIcon"></i>
           <% end %>
    </div>
