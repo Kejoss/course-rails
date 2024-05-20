@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  post "send/survey", to: "surveys#send_survey_by_email"
+
   resources :surveys do
     get "add/sections", to: "survey_sections#add_sections"
     post "save/sections", to: "survey_sections#save_sections"
