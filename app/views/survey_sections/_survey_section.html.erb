@@ -4,7 +4,9 @@
       <%= button_to survey_up_section_path(survey, id: section.id), method: :patch do %>
          <i class="fas fa-arrow-circle-up"></i>
       <% end %>
-      <i class="fas fa-arrow-circle-down"></i>
+      <%= button_to survey_down_section_path(survey, id: section.id), method: :patch do %>
+         <i class="fas fa-arrow-circle-down"></i>
+      <% end %>
    </div>
    <div class="w-8/12 flex flex-col mr-5">
      <span class="font-semibold">

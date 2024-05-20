@@ -15,16 +15,15 @@ class SurveySection < ApplicationRecord
   end
 
   def configure_order
-    surv_sec = SurveySection.where(survey_id: survey.id).order(order: :asc)
-
+    surv_sec = SurveySection.where(survey_id: survey_id).order(order: :asc)
     surv_sec.empty? ? self.order = 1 : self.order = surv_sec.last.order + 1
   end
 
-  def reorder_objects(id)
-    survey_sections = where(survey_id: survey.id)
+  def self.reorder_objects(id)
+    survey_sections = where(survey_id: id)
 
     survey_sections.each.with_index do |survey_section, index|
-      survey_section.update!(order: index + 1 )
+      survey_section.update!(order: index + 1)
     end
   end
 end
