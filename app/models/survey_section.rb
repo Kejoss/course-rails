@@ -1,4 +1,10 @@
 class SurveySection < ApplicationRecord
+
+  scope :grab_objects, -> (sv_id) { where(survey_id: sv_id) }
+  scope :grab_record, -> (sv_id, sc_id) { where(survey_id: sv_id).find_by(section_id: sc_id) }
+
+  scope :set_maximum, -> (sv_id) { where(survey_id: sv_id).maximum(:order) }
+
   belongs_to :survey
   belongs_to :section
 
