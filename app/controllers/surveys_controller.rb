@@ -1,5 +1,5 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: %i[ show edit update destroy ]
+  before_action :set_survey, only: %i[ show edit update destroy add_emails send_survey_by_email ]
 
   def index
     @surveys = Survey.all
@@ -13,6 +13,9 @@ class SurveysController < ApplicationController
   end
 
   def edit
+  end
+
+  def add_emails
   end
 
   def create
@@ -47,16 +50,25 @@ class SurveysController < ApplicationController
   end
 
   def send_survey_by_email
-    SurveyMailer.with(email: "kevinanderson22082001@gmail.com").welcome_survey.deliver_later
+    send_survey_params
+    @log = Log.new(email: @email, status: 0, survey_id: @survey.id)
+    @log.save
+    SurveyMailer.with(log: @log, subject: @subject, message: @message, survey: @survey).welcome_survey.deliver_later
   end
 
   private
   
     def set_survey
-      @survey = Survey.find(params[:id])
+      @survey = Survey.find(params[:id] || params[:survey_id])
     end
 
     def survey_params
       params.require(:survey).permit(:name, :description, :avatar)
+    end
+
+    def send_survey_params
+      @email = params[:email]
+      @subject = params[:subject]
+      @message = params[:message]
     end
 end
