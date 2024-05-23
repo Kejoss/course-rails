@@ -32,7 +32,7 @@
         </div>
 
         <div>
-            <%= form_with(url: audits_save_answers_path(user_token: token) , method: :post) do |f| %>
+            <%= form_with(url: audits_save_answers_path(user_token: token, id: survey.uuid) , method: :post) do |f| %>
                 <% evaluation.questions.each do |question| %>
 
                     <div class="mt-10 mb-16 mx-5 p-5 border-2 rounded-lg flex flex-col shadow-lg">
