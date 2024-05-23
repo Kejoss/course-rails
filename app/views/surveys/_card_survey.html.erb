@@ -10,17 +10,17 @@
   </div>
   
   <div class="w-full p-5">
-    <p class="text-3xl font-bold text-chapterStrong">
+    <p class="text-3xl font-bold text-surveyStrong">
       <%= survey.name %>
       <i class="fa-solid fa-list-check ml-5"></i>
     </p>
 
-    <p class="my-2 font-semibold text-chapterStrong">
+    <p class="my-2 font-semibold text-surveyStrong">
       <%= survey.description %>
       
     </p>
 
-    <p class="font-semibold text-sm text-chapterStrong">
+    <p class="font-semibold text-sm text-surveyStrong">
       <%= survey.user.email %>
     </p>
   </div>
@@ -33,6 +33,13 @@
     <%= button_to survey_path(survey), id:"remove_chapter_icon", method: :delete, form: {data: {turbo_confirm: "Are you sure?"} } do %>
       <i class="fa-solid fa-trash text-removeIcon"></i>
     <% end %>
+
+    <%= button_to send_survey_path, id: "send_survey", method: :post do %>
+      <i class="fas fa-share"></i>
+    <% end %>
+    <i class="fas fa-cloud-download"></i>
+    <i class="fas fa-users"></i> 
+
   </div>
 </section>
 

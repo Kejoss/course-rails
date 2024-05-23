@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     colors: {
       "mainColor": "#2c3639",
-      "black": "000000",
+      "black": "#000000",
       "white": "#ffffff",
       "signIn": "#9ff1e5",
       "signUp": "#ecffc8",
