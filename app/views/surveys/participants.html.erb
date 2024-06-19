@@ -1,0 +1,13 @@
+<%= turbo_frame_tag 'participants' do %>
+    <% @survey.logs.each do |log| %>
+        <p>
+            <%= log.email%> <br>
+            <%= log.token%> <br>
+        </p>
+    <% end %>
+    <div>
+        <%= link_to :back do %>
+            back
+        <% end %>
+    </div>
+<% end %>
