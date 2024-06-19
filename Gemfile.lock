@@ -100,6 +100,8 @@ GEM
       dotenv (= 3.1.0)
       railties (>= 6.1)
     erubi (1.12.0)
+    fast_excel (0.5.0)
+      ffi (> 1.9, < 2)
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -248,6 +250,7 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  fast_excel
   hirb (~> 0.7.3)
   image_processing (~> 1.2)
   importmap-rails

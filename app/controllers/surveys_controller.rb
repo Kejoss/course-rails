@@ -1,7 +1,11 @@
 #Esto es para hacer disponible el formato csv
 require "csv"
+
+#Esto es para formato xslx
+require 'fast_excel'
+
 class SurveysController < ApplicationController
-  before_action :set_survey, only: %i[ show edit update destroy add_emails send_survey_by_email export_answers]
+  before_action :set_survey, only: %i[ show edit update destroy add_emails send_survey_by_email export_answers export_xlsx_answers]
 
   def index
     @surveys = Survey.all
@@ -65,6 +69,12 @@ class SurveysController < ApplicationController
       format.csv { send_data @answers.to_csv, filename: "#{@survey.name} #{Date.today}.csv" }
     end
   end 
+
+  def export_xlsx_answers
+    @answers = @survey.answes
+    @answers.to_xlsx
+
+  end
 
   private
   
