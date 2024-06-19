@@ -26,4 +26,30 @@ class Answe < ApplicationRecord
 
     end
   end
+
+
+  def self.to_xlsx
+    answers = all
+
+    #Creo el archivo que se guardara en el repo
+    workbook = FastExcel.open("respuesa.xlsx", constant_memory: true)
+    
+    #Asigno nombre a la hoja de excel
+    worksheet = workbook.add_worksheet("datos")
+    
+    #inserto el encabezado. Nota append_row inserta un fila entera
+    bold = workbook.bold_format
+    worksheet.append_row(answers.first.attributes.keys, bold) 
+    
+    #De cada respuesta inserto los datos en fila
+    answers.each do |answer|
+      worksheet.append_row(answer.attributes.values)
+    end
+
+
+
+    #una vez que termine de insertar la filas en el excel. Cerramos
+    workbook.close
+  end
+
 end

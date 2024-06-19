@@ -42,6 +42,10 @@
       <i class="fas fa-cloud-download"></i>
     <% end %>
 
+    <%= button_to exportxlsx_anwers_path(format: "xlsx"), method: :get, params: {id: survey.id }, id: "export answers" do %>
+      <i class="fa-sharp fa-solid fa-arrow-down-to-line"></i>
+    <% end %>
+
     <i class="fas fa-users"></i> 
 
   </div>

@@ -14,6 +14,9 @@ gem "pg", "~> 1.1"
 
 gem "devise"
 
+# Use fas_excel para exportar datos a excel
+gem 'fast_excel'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
