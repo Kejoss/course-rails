@@ -1,14 +1,16 @@
 class AuditsController < ApplicationController
     layout "audits"
-    before_action :set_survey, only: %i[index save_answers]
+    before_action :set_survey, only: %i[ index save_answers ]
 
     def index
+        
         @step = params[:step].to_i
         set_log
 
-        @log.update!(status: 1) if @log.deafult?
+        @log.update!(status: 1) if @log.default?
         @log.update!(status: 2) unless @step.zero?
         @total = @survey.sections.count
+        @bar = (@step.to_f / @total.to_f) * 100
     end
 
     def finish

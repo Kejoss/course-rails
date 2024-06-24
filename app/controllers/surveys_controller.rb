@@ -34,7 +34,7 @@ class SurveysController < ApplicationController
       if @survey.save
         format.turbo_stream { render turbo_stream: turbo_stream.replace('surveys_all', partial: 'surveys/surveys', locals: { surveys: Survey.all }) }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace('modal', partial: 'errors/new_survey', locals: {}) }
       end
     end
   end

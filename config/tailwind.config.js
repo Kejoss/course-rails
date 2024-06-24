@@ -23,6 +23,7 @@ module.exports = {
       "chapterStrong": "#05636f",
       "surveyStrong": "#686f05",
       "formBack":"#1f2937",
+      "errorMessage": "#fecaca"
     },
     extend: {
       fontFamily: {
